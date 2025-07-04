@@ -1,5 +1,5 @@
 #!/bin/bash
-##SBATCH --job-name=gaussian_splatting
+##SBATCH --job-name=gaussian_splatting_cyberpunk_apartment_interior
 #SBATCH --output=/scratch/sm12754/projects/gaussian_splatting/logs/%A.out
 #SBATCH --error=/scratch/sm12754/projects/gaussian_splatting/logs/%A.err
 #SBATCH --time=24:00:00
@@ -19,7 +19,7 @@ SINGULARITY_IMAGE=/scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-de
 
 OVERLAY_FILE=$SCRATCH/gaussian_splatting/overlay-25GB-500K.ext3;
 
-DATASET_DIR=$SCRATCH/gaussian_splatting/data/cyberpunk_apartment_interior;
+DATASET_DIR=$SCRATCH/gaussian_splatting/data/cyberpunk_augmentation_clinic_interior;
 
 singularity exec --nv --overlay $OVERLAY_FILE:ro $SINGULARITY_IMAGE /bin/bash -c "
     source /ext3/env.sh
