@@ -19,7 +19,7 @@ SINGULARITY_IMAGE=/scratch/work/public/singularity/cuda11.6.124-cudnn8.4.0.27-de
 
 OVERLAY_FILE=$SCRATCH/gaussian_splatting/overlay-25GB-500K.ext3;
 
-DATASET_DIR=$SCRATCH/gaussian_splatting/data/apartment_interior_studio_A;
+DATASET_DIR=$SCRATCH/gaussian_splatting/data/apartment_interiors_studio_A;
 
 singularity exec --nv --overlay $OVERLAY_FILE:ro $SINGULARITY_IMAGE /bin/bash -c "
     source /ext3/env.sh
