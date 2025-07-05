@@ -26,5 +26,7 @@ singularity exec --nv --overlay $OVERLAY_FILE:ro $SINGULARITY_IMAGE /bin/bash -c
     conda activate gaussian_splatting
     cd $RUN_DIR &&
     python train.py -s $DATASET_DIR -r 1 \
-                    --model_path $DATASET_DIR/output
+                    --model_path $DATASET_DIR/output \
+                    --port 5002 \
+                    --checkpoint_iterations 30000 
 "
