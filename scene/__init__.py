@@ -73,6 +73,7 @@ class Scene:
             self.train_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.train_cameras, resolution_scale, args, scene_info.is_nerf_synthetic, False)
             print("Loading Test Cameras")
             self.test_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.test_cameras, resolution_scale, args, scene_info.is_nerf_synthetic, True)
+            print(f'Loaded {len(self.train_cameras[resolution_scale])} training cameras and {len(self.test_cameras[resolution_scale])} test cameras at scale {resolution_scale}')
 
         if self.loaded_iter:
             self.gaussians.load_ply(os.path.join(self.model_path,
