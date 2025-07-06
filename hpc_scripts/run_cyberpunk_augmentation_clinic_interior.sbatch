@@ -29,5 +29,6 @@ singularity exec --nv --overlay $OVERLAY_FILE:ro $SINGULARITY_IMAGE /bin/bash -c
                     --model_path $DATASET_DIR/output \
                     -d $DATASET_DIR/depths \
                     --port 5002 \
-                    --checkpoint_iterations 30000 
+                    --checkpoint_iterations 30000 \
+                    --eval
 "
